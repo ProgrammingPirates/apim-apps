@@ -127,10 +127,12 @@ const StyledBox = styled(Box)((
     },
 
     [`& .${classes.contentInside}`]: {
-        width: 'calc(100% - 56px)',
+        width: '100%',
+        maxWidth: `min(calc(100vw - ${theme.custom.leftMenuWidth}px), ${theme.custom.contentAreaWidth}px)`,
         paddingLeft: theme.spacing(3),
         paddingRight: theme.spacing(3),
         paddingTop: theme.spacing(2),
+        flex: 1, // Ensure content takes full available space
     },
 
     [`& .${classes.footeremaillink}`]: {
